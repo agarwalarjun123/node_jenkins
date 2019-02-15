@@ -1,0 +1,18 @@
+version: "2"
+
+services:
+  node: 
+    container_name: node-practice
+    build: .
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/usr/src/app
+    
+  jenkins:
+      container_name: jenkins_node_app
+      image: jenkins
+      volumes:
+        - ./jenkins_home:/var/jenkins _home
+      ports:
+        - 8080:8080
