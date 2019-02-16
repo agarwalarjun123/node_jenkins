@@ -4,7 +4,9 @@ pipeline {
     stages {
         stage('build') {
             steps {
+                script{
                 docker.build("Node-practice")
+                }
             }
         }
     }
