@@ -1,12 +1,11 @@
 
 pipeline {
-    agent none
+    agent { docker { image 'node:6.3' } }
     stages {
-        stage('Build') { 
+        stage('build') {
             steps {
-                sh 'sudo docker-compose build' 
+                sh 'docker-compose build'
             }
         }
     }
 }
-
