@@ -1,12 +1,11 @@
 
 pipeline {
     agent any
-    tools{docker "docker"}
+    tools{nodejs "nodejs"}
     stages {
         stage('build') {
             steps {
                 sh "npm install"
-                sh 'docker-compose build'
             }
         }
     }
