@@ -1,11 +1,10 @@
 
 pipeline {
-    agent any
-    tools{Docker "Docker"}
+    agent {d}
     stages {
         stage('build') {
             steps {
-                sh "npm install"
+                sh "docker image build -t ."
             }
         }
     }
