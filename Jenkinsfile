@@ -1,13 +1,17 @@
 
 pipeline {
-    agent any
-    stages {
-        stage('build') {
-            steps {
-                script{
-                docker.build("Node-practice")
-                }
-            }
-        }
+  agent {
+    docker {
+      image 'node:7-alpine'
     }
+  }
+
+  stages {
+    stage('Unit') {
+      steps {
+        sh 'node -v'
+        sh 'npm -v'
+      }
+    }
+  }
 }
