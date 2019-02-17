@@ -1,17 +1,6 @@
-
-pipeline {
-  agent {
-    docker {
-      image 'node:7-alpine'
+node { 
+    stage('Build') { 
+        sh 'docker ps'
     }
-  }
 
-  stages {
-    stage('Unit') {
-      steps {
-        sh 'node -v'
-        sh 'npm -v'
-      }
-    }
-  }
 }
